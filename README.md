@@ -115,3 +115,4 @@ SQLite does not support setting the schema. Default schema NOT changed to main
 | 3       | Delete people         |                     | Pending |
 +---------+-----------------------+---------------------+---------+
 
+After `flyway migrate` the migrations will appear with success
