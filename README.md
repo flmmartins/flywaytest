@@ -116,3 +116,22 @@ SQLite does not support setting the schema. Default schema NOT changed to main
 +---------+-----------------------+---------------------+---------+
 
 After `flyway migrate` the migrations will appear with success
+
+**Clean does not clear the baseline settings**
+
+Flyway 4.0.3 by Boxfuse
+
+Database: jdbc:sqlite:file:./foobardb (SQLite 3.0)
+
+Successfully validated 3 migrations (execution time 00:00.034s)
+
+SQLite does not support setting the schema. Default schema NOT changed to main
+
+ERROR: Found non-empty schema "main" without metadata table! Use baseline() or set baselineOnMigrate to true to initialize the metadata table.
+
+**baselineOnMigrate**: didnt work or even trying to set baselineVersion=0 worked.
+
+Bug? https://groups.google.com/forum/#!msg/ninja-framework/lMdSzHm6rsk/D-cFDirNIIoJ
+
+
+
