@@ -48,12 +48,19 @@ Migrating schema "main" to version 3 - Delete people
 ERROR: Migration of schema "main" to version 3 - Delete people failed! Changes successfully rolled back.
 
 SQLite does not support setting the schema. Default schema NOT changed to main
+
 ERROR: Migration V3__Delete_people.sql failed
+
 SQL State  : null
+
 Error Code : 1
+
 Message    : [SQLITE_ERROR] SQL error or missing database (near "(": syntax error)
+
 Location   : ./sql/V3__Delete_people.sql (/Users/fmartins/dev/LATAM/flyway/./sql/V3__Delete_people.sql)
+
 Line       : 1
+
 Statement  : delete from PERSON (ID, NAME) values (1, 'Axel')")")
 
 The `flyway info` will display the failed migration as Pending:
@@ -61,6 +68,7 @@ The `flyway info` will display the failed migration as Pending:
 Flyway 4.0.3 by Boxfuse
 
 Database: jdbc:sqlite:file:./foobardb (SQLite 3.0)
+
 SQLite does not support setting the schema. Default schema NOT changed to main
 
 +---------+---------------------+---------------------+---------+
@@ -70,3 +78,7 @@ SQLite does not support setting the schema. Default schema NOT changed to main
 | 2       | Add people          | 2016-11-10 17:57:31 | Success |
 | 3       | Delete people       |                     | Pending |
 +---------+---------------------+---------------------+---------+
+
+### Clean
+
+Clean will clean metadata table and your data
