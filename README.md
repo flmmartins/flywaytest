@@ -82,3 +82,36 @@ SQLite does not support setting the schema. Default schema NOT changed to main
 ### Clean
 
 Clean will clean metadata table and your data
+
+### Baseline
+
+Apllying the wrong baseline will display:
+
+```
+flyway baseline -baselineVersion=3
+```
+
+Flyway 4.0.3 by Boxfuse
+
+Database: jdbc:sqlite:file:./foobardb (SQLite 3.0)
+
+SQLite does not support setting the schema. Default schema NOT changed to main
+
+ERROR: Unable to baseline metadata table "main"."schema_version" with (3,<< Flyway 
+Baseline >>) as it has already been initialized with (1,<< Flyway Baseline >>)
+
+After baseline version 1, in `flyway info` will be like:
+
+Flyway 4.0.3 by Boxfuse
+
+Database: jdbc:sqlite:file:./foobardb (SQLite 3.0)
+SQLite does not support setting the schema. Default schema NOT changed to main
+
++---------+-----------------------+---------------------+---------+
+| Version | Description           | Installed on        | State   |
++---------+-----------------------+---------------------+---------+
+| 1       | << Flyway Baseline >> | 2016-11-16 14:36:17 | Success |
+| 2       | Add people            |                     | Pending |
+| 3       | Delete people         |                     | Pending |
++---------+-----------------------+---------------------+---------+
+
